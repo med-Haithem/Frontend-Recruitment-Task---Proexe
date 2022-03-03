@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+## Deployed Version:
+https://frontend-recruitment-task-proexe.vercel.app/
+
 In the project directory, you can run:
 
 ### `npm start`
