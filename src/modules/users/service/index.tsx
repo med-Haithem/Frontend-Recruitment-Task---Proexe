@@ -2,7 +2,7 @@ import { I_USER } from "../../../types/user";
 
 class UserService {
   baseApi =
-    "https://my-json-server.typicode.com/karolkproexe/jsonplaceholderd/data";
+    "https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data";
 
   getAllUsers = () => {
     return new Promise<I_USER[]>((resolve, reject) =>
