@@ -8,9 +8,9 @@ const { Content, Footer, Sider } = Layout;
 export function App() {
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider>
+      <Sider breakpoint="lg">
         <h1 className="title">
-          <SettingOutlined /> Dashboard
+          <SettingOutlined /> <span className="text">Dashboard</span>
         </h1>
         <Menu theme="dark" defaultSelectedKeys={["users"]} mode="inline">
           <Menu.Item key="users" icon={<UserOutlined />}>

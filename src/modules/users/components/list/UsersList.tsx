@@ -131,6 +131,9 @@ export const UsersList = () => {
           rowKey={"id"}
           dataSource={users.data}
           bordered
+          scroll={{
+            x: true,
+          }}
           loading={users.loading}
         />
       </Col>
