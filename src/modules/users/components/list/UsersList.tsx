@@ -120,8 +120,8 @@ export const UsersList = () => {
       </Col>
       <Col span={12} className="text-align-right">
         <Link to={"./add"}>
-          <Button icon={<UserAddOutlined />} size="large" type="primary">
-            Add new User
+          <Button icon={<UserAddOutlined />} type="primary">
+            Add new
           </Button>
         </Link>
       </Col>
