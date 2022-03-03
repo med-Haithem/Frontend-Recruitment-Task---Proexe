@@ -28,7 +28,7 @@ export const UsersEdit = () => {
   const handleSubmit = (values: any) => {
     dispatch(editUser({ ...values, id: user.id }));
     notification.open({
-      message: "User aded successfully",
+      message: "User edited successfully",
       type: "success",
     });
     navigate("/users");

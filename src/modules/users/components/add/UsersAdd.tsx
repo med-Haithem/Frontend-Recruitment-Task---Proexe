@@ -10,7 +10,7 @@ export const UsersAdd = () => {
   const handleSubmit = (values: any) => {
     dispatch(addNewUser(values));
     notification.open({
-      message: "User aded successfully",
+      message: "User added successfully",
       type: "success",
     });
     navigate("/users");
