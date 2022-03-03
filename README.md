@@ -2,10 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
 ## Deployed Version:
 https://frontend-recruitment-task-proexe.vercel.app/
+
+
+## Available Scripts
 
 In the project directory, you can run:
 
