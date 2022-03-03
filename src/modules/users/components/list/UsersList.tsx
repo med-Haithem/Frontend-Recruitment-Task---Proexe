@@ -1,4 +1,4 @@
-import { Button, Col, Modal, Row, Table, notification } from "antd";
+import { Button, Col, Modal, Row, Table, notification, Alert } from "antd";
 import {
   ExclamationCircleOutlined,
   DeleteOutlined,
@@ -125,6 +125,11 @@ export const UsersList = () => {
           </Button>
         </Link>
       </Col>
+      {users.error ? (
+        <Col span={24}>
+          <Alert type="error" message="Error fetching data" />
+        </Col>
+      ) : null}
       <Col span={24}>
         <Table
           columns={columns as any}

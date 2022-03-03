@@ -4,20 +4,12 @@ class UserService {
   baseApi =
     "https://my-json-server.typicode.com/karolkproexe/jsonplaceholderdb/data";
 
-  getAllUsers = () => {
-    return new Promise<I_USER[]>((resolve, reject) =>
-      fetch(this.baseApi)
-        .then((res) => {
-          if (!res.ok) return reject();
-          return res
-            .json()
-            .then((response: I_USER[]) => {
-              resolve(response);
-            })
-            .catch((err) => reject());
-        })
-        .catch((err) => reject())
-    );
+  getAllUsers = async () => {
+    const response = await fetch(this.baseApi);
+    if (!response.ok) return Promise.reject();
+    const users: I_USER[] = await response.json();
+    return users;
   };
 }
+
 export default new UserService();
