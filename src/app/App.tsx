@@ -1,26 +1,34 @@
-import React, { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../common/hooks";
-import { fetchAllUsers, selectUsers } from "../modules/users/userSlice";
+import { Layout, Menu } from "antd";
+import { UserOutlined, SettingOutlined } from "@ant-design/icons";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+import "./App.css";
+import { Users } from "../modules";
+const { Content, Footer, Sider } = Layout;
 
 export function App() {
-  const dispatch = useAppDispatch();
-  const users = useAppSelector(selectUsers);
-  console.log("users", users);
-
-  useEffect(() => {
-    dispatch(fetchAllUsers());
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  const Appa = () => <></>;
-
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/administation/users" element={Appa} />
-        <Route path="/" element={<Navigate to="/administation/users" />} />
-      </Routes>
-    </div>
+    <Layout style={{ minHeight: "100vh" }}>
+      <Sider>
+        <h1 className="title">
+          <SettingOutlined /> Dashboard
+        </h1>
+        <Menu theme="dark" defaultSelectedKeys={["users"]} mode="inline">
+          <Menu.Item key="users" icon={<UserOutlined />}>
+            <Link to={"./users"}>Users</Link>
+          </Menu.Item>
+        </Menu>
+      </Sider>
+      <Layout>
+        <Content className="site-layout-content">
+          <Routes>
+            <Route path="/users/*" element={<Users />} />
+            <Route path="/" element={<Navigate to="/users" />} />
+          </Routes>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          <h3>Frontend Recruitment Task - Proexe</h3>
+        </Footer>
+      </Layout>
+    </Layout>
   );
 }

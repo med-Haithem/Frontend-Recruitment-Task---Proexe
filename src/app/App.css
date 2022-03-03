@@ -1,0 +1,12 @@
+.title {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.site-layout-content {
+  margin: 16px;
+  padding: 16px;
+  background-color: #fff !important;
+}
