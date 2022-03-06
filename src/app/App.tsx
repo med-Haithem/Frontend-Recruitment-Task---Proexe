@@ -1,34 +1,15 @@
-import { Layout, Menu } from "antd";
-import { UserOutlined, SettingOutlined } from "@ant-design/icons";
-import { Routes, Route, Navigate, Link } from "react-router-dom";
 import "./App.css";
 import { Users } from "../modules";
-const { Content, Footer, Sider } = Layout;
+import { CommonLayout } from "../common";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 export function App() {
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <Sider breakpoint="lg">
-        <h1 className="title">
-          <SettingOutlined /> <span className="text">Dashboard</span>
-        </h1>
-        <Menu theme="dark" defaultSelectedKeys={["users"]} mode="inline">
-          <Menu.Item key="users" icon={<UserOutlined />}>
-            <Link to={"./users"}>Users</Link>
-          </Menu.Item>
-        </Menu>
-      </Sider>
-      <Layout>
-        <Content className="site-layout-content">
-          <Routes>
-            <Route path="/users/*" element={<Users />} />
-            <Route path="/" element={<Navigate to="/users" />} />
-          </Routes>
-        </Content>
-        <Footer style={{ textAlign: "center" }}>
-          <h3>Frontend Recruitment Task - Proexe</h3>
-        </Footer>
-      </Layout>
-    </Layout>
+    <CommonLayout>
+      <Routes>
+        <Route path="/users/*" element={<Users />} />
+        <Route path="/" element={<Navigate to="/users" />} />
+      </Routes>
+    </CommonLayout>
   );
 }
